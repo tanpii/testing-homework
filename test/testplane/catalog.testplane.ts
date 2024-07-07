@@ -8,9 +8,11 @@ describe("страница каталога", () => {
     for (const product of products) {
       const name = await product.$('.ProductItem-Name');
       const price = await product.$('.ProductItem-Price');
+
       const nameText = await name.getText();
       const priceText = await price.getText();
-      expect(nameText).toBeTruthy();
+
+      expect(nameText).toBeTruthy(); // проверяем, что данные не пустые
       expect(priceText).toBeTruthy();
     }
   });

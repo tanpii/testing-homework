@@ -8,9 +8,9 @@ import renderHelper from "../renderHelper";
 import axios from "axios";
 
 const products = [
-  { id: 1, name: 'Товар 1', price: 1 },
-  { id: 2, name: 'Товар 2', price: 2 },
-  { id: 3, name: 'Товар 3', price: 3 }
+  { id: 1, name: 'имя товара 1', price: 1 },
+  { id: 2, name: 'имя товара 2', price: 2 },
+  { id: 3, name: 'имя товара 3', price: 3 }
 ];
 
 describe('страница каталога товаров', () => {

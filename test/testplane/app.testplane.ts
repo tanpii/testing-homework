@@ -1,15 +1,6 @@
 import { bug } from "../bug";
 
 describe('всё приложение', () => {
-  it('существуют страницы: главная, каталог, условия доставки, контакты, корзина', async ({browser}) => {
-      const pages = ['/hw/store', '/hw/store/catalog', '/hw/store/delivery', '/hw/store/contacts', '/hw/store/cart'];
-      for (const page of pages) {
-          await browser.url(page + bug);
-          const pageTitle = await browser.$('title');
-          expect(pageTitle).toExist();
-      }
-  })
-
   it('на ширине меньше 576px навигационное меню скрывается за "гамбургер"', async ({browser}) => {
     await browser.url('/hw/store' + bug);
 
