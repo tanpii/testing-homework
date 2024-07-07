@@ -6,35 +6,35 @@ describe('скриншоты', () => {
         await browser.url('/hw/store' + bug);
 
         const body = await browser.$('body');
-        await body.assertView('plain', {ignoreDiffPixelCount: '3%'});
+        await body.assertView('plain', {ignoreDiffPixelCount: '2%'});
     })
 
     it('страница каталога по умолчанию', async ({browser}) => {
         await browser.url('/hw/store/catalog' + bug);
 
         const body = await browser.$('body');
-        await body.assertView('plain', {ignoreDiffPixelCount: '3%'});
+        await body.assertView('plain', {ignoreDiffPixelCount: '2%'});
     })
 
     it('страница продукта', async ({browser}) => {
         await browser.url('/hw/store/catalog/0' + bug);
         
         const body = await browser.$('body');
-        await body.assertView('plain', {ignoreDiffPixelCount: '3%'});
+        await body.assertView('plain', {ignoreDiffPixelCount: '2%'});
     })
        
     it('страница доставки', async ({browser}) => {
         await browser.url('/hw/store/delivery' + bug);
 
         const body = await browser.$('body');
-        await body.assertView('plain', {ignoreDiffPixelCount: '3%'});
+        await body.assertView('plain', {ignoreDiffPixelCount: '2%'});
     })
 
     it('страница контактов', async ({browser}) => {
         await browser.url('/hw/store/contacts' + bug);
         
         const body = await browser.$('body');
-        await body.assertView('plain', {ignoreDiffPixelCount: '3%'});
+        await body.assertView('plain', {ignoreDiffPixelCount: '2%'});
     })
 
     it('страница пустой корзины', async ({browser}) => {
@@ -52,7 +52,7 @@ describe('скриншоты', () => {
         await browser.url('/hw/store/cart' + bug);
         const body = await browser.$('body');
 
-        await body.assertView('plain', {ignoreDiffPixelCount: '3%'});
+        await body.assertView('plain', {ignoreDiffPixelCount: '2%'});
     })
 
     it('сообщение о покупке', async ({browser}) => {
@@ -73,6 +73,6 @@ describe('скриншоты', () => {
         await sendButton.click();
         
         const body = await browser.$('body');
-        await body.assertView('plain', {ignoreDiffPixelCount: '3%'});
+        await body.assertView('plain', {ignoreDiffPixelCount: '2%'});
     })
 })

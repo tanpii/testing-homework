@@ -53,6 +53,7 @@ describe('форма оформления', () => {
 
         waitFor(async () => {
             expect(container.querySelector('.Cart-SuccessMessage')).toBeInTheDocument();
+            expect(container.querySelector('.Cart-Number')?.textContent).toEqual(1);
         });
     })
 

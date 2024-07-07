@@ -31,15 +31,6 @@ export default {
             path: "testplane-report",
             defaultView: "all",
             diffMode: "3-up-scaled"
-        },
-        "@testplane/global-hook": {
-            afterEach: async ({browser}) => {
-                await browser.execute(() => {
-                    try {
-                        localStorage.clear();
-                    } catch (e) { }
-                });
-            }
         }
     }
 };

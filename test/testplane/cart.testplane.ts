@@ -6,7 +6,6 @@ describe('страница корзины', () => {
       const addButton = await browser.$('.ProductDetails-AddToCart');
       await addButton.click();
 
-      // перезагружаем страницу
       await browser.url('/hw/store/cart' + bug);
       await browser.url('/hw/store/cart' + bug);
 

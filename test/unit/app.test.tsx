@@ -36,6 +36,11 @@ describe('страницы приложения', () => {
     const homeTitle = getByText('Welcome to Kogtetochka store!');
     expect(homeTitle).toBeInTheDocument();
   })
+  it('главная страница статическая', async () => {
+    const { container } = renderHelper(<Home/>);
+
+    expect(container).toMatchSnapshot('главная страница');
+  })
 
   it('по роуту /contacts отрисовывается страница Contacts', async () => {
     const { container } = renderHelper(<Application/>, { initialEntries: ['/contacts'] });
@@ -43,12 +48,22 @@ describe('страницы приложения', () => {
     const contactsTitle = await waitFor(() => container.querySelector('h1'));
     expect(contactsTitle?.textContent).toBe('Contacts');
   })
+  it('страница контактов статическая', async () => {
+    const { container } = renderHelper(<Contacts/>);
+
+    expect(container).toMatchSnapshot('страница контактов');
+  })
 
   it('по роуту /delivery отрисовывается страница Delivery', async () => {
     const { container } = renderHelper(<Application/>, { initialEntries: ['/delivery'] });
 
     const contactsTitle = await waitFor(() => container.querySelector('h1'));
     expect(contactsTitle?.textContent).toBe('Delivery');
+  })
+  it('страница условий доставки статическая', async () => {
+    const { container } = renderHelper(<Delivery/>);
+
+    expect(container).toMatchSnapshot('страница условий доставки');
   })
 
   it('по роуту /catalog отрисовывается страница Catalog', async () => {
@@ -63,23 +78,5 @@ describe('страницы приложения', () => {
 
     const contactsTitle = await waitFor(() => container.querySelector('h1'));
     expect(contactsTitle?.textContent).toBe('Shopping cart');
-  })
-});
-
-describe('статические страницы', () => {
-  it('главная страница статическая', async () => {
-    const { container } = renderHelper(<Home/>);
-
-    expect(container).toMatchSnapshot('главная страница');
-  })
-  it('страница условий доставки статическая', async () => {
-    const { container } = renderHelper(<Delivery/>);
-
-    expect(container).toMatchSnapshot('страница условий доставки');
-  })
-  it('страница контактов статическая', async () => {
-    const { container } = renderHelper(<Contacts/>);
-
-    expect(container).toMatchSnapshot('страница контактов');
   })
 });

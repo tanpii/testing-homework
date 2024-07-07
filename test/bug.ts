@@ -1,2 +1,2 @@
-export const bug = '?bug_id=10'
+export const bug = '?bug_id=3'
 //''
